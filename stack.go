@@ -1,35 +1,51 @@
+// Valeria López Barcelata A00833578
+// Desarrollo de aplicaciones avanzadas de ciencias computacionales
+// Módulo 3 - Compiladores: Tarea 1
+// 3 de abril de 2025
+// Implementación de una pila de enteros en Go
+
 package main
 
-// Stack represents a simple integer stack
+// Inicializa una pila de enteros
 type Stack struct {
 	items []int
 }
 
-// Push adds an element to the stack
+// Agrega un elemento al final de la pila
 func (s *Stack) Push(item int) {
 	s.items = append(s.items, item)
 }
 
-// Pop removes and returns the top element of the stack
-func (s *Stack) Pop() (int, bool) {
+// Elimina el último elemento de la pila y lo devuelve
+func (s *Stack) Pop() int {
 	if len(s.items) == 0 {
-		return 0, false // Stack is empty
+		panic("Error: No hay elementos en la pila")
 	}
-	lastIndex := len(s.items) - 1
-	item := s.items[lastIndex]
-	s.items = s.items[:lastIndex] // Remove the last element
-	return item, true
+	last := len(s.items) - 1
+	item := s.items[last]
+	s.items = s.items[:last]
+	return item
 }
 
-// Peek returns the top element without removing it
-func (s *Stack) Peek() (int, bool) {
-	if len(s.items) == 0 {
-		return 0, false // Stack is empty
-	}
-	return s.items[len(s.items)-1], true
-}
-
-// IsEmpty checks if the stack is empty
+// Verifica si la pila está vacía
 func (s *Stack) IsEmpty() bool {
 	return len(s.items) == 0
+}
+
+// Regresa el tamaño de la pila
+func (s *Stack) Size() int {
+	return len(s.items)
+}
+
+// Elimina todos los elementos de la pila
+func (s *Stack) Clear() {
+	s.items = []int{}
+}
+
+// Imprime los elementos de la pila en una línea
+func (s *Stack) Print() {
+	for _, item := range s.items {
+		print(item, " ")
+	}
+	println()
 }
