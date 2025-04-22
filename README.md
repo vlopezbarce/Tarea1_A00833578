@@ -4,8 +4,10 @@
 ### 📄 Tarea 1
 
 📅 **Fecha de entrega:** 3 de abril de 2025
-👩‍💻 **Nombre:** Valeria López Barcelata
-🎓 **Matrícula:** A00833578
+
+**Nombre:** Valeria López Barcelata
+
+**Matrícula:** A00833578
 
 ---
 
